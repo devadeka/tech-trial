@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2'
-gem 'pg'
+
+gem 'pg', '~> 0.21'
 
 gem 'spring', group: :development
 
 group :development, :test do
   gem 'pry'
-  gem 'rspec-rails'
   gem 'reek'
+  gem 'rspec-rails'
   gem 'rubocop'
   gem 'rubocop-rspec'
 end
