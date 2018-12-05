@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CountriesController < ApplicationController
   def shipping_rates
     @country = Country.find_by(code: shipping_rates_params[:country_code])

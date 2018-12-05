@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe CountriesController do
@@ -17,8 +19,10 @@ RSpec.describe CountriesController do
         JSON.parse(response.body)
       end
 
-      specify { expect(response_body['regular']).to eq country.regular_shipping_rate }
-      specify { expect(response_body['express']).to eq country.express_shipping_rate }
+      specify 'works', :aggregate_failures do
+        expect(response_body['regular']).to eq country.regular_shipping_rate
+        expect(response_body['express']).to eq country.express_shipping_rate
+      end
     end
   end
 end
