@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe CountriesController do
   describe 'shipping_rates' do
-    subject(:shipping_rates) { get :shipping_rates, country_code: code, format: :json }
+    subject(:shipping_rates) { get :shipping_rates, params: { country_code: code }, format: :json }
 
     let(:code)     { 'AU' }
-    let!(:country) { FactoryGirl.create :country, code: code }
+    let!(:country) { FactoryBot.create :country, code: code }
 
-    before { FactoryGirl.create :country, code: 'US' }
+    before { FactoryBot.create :country, code: 'US' }
 
     it { is_expected.to be_successful }
 
