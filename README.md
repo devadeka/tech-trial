@@ -1,4 +1,4 @@
-# Trike Trial Application
+# Bellroy Tech Team Trial Application
 
 ## About the app
 This app is designed to help us evaluate potential recruits.
@@ -13,7 +13,7 @@ The app contains a single endpoint that returns shipping rates for a given count
 ## Setup
 
 ```
-  git clone git@github.com:tricycle/trike_trial.git
+  git clone git@github.com:tricycle/bellroy-tech-team-trial.git
 
   bundle install
 
@@ -25,6 +25,4 @@ The app contains a single endpoint that returns shipping rates for a given count
 Run the tests using:
 ```
   rspec spec
-``` 
-
-
+```
