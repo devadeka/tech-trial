@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_022718) do
+ActiveRecord::Schema.define(version: 2019_04_10_024339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 2019_04_10_022718) do
     t.string "express_shipping_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "country_shipping_rates", force: :cascade do |t|
+    t.bigint "country_id"
+    t.bigint "currency_id"
+    t.string "regular"
+    t.string "express"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_country_shipping_rates_on_country_id"
+    t.index ["currency_id"], name: "index_country_shipping_rates_on_currency_id"
   end
 
   create_table "currencies", force: :cascade do |t|
