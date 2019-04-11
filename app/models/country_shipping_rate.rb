@@ -1,6 +1,9 @@
 class CountryShippingRate < ApplicationRecord
-  validate :country, presence: true
-  validate :currency, presence: true
-  validate :regular, presence: true
-  validate :express, presence: true
+  validates :country, presence: true
+  validates :currency, presence: true
+  validates :regular, presence: true
+  validates :express, presence: true
+
+  belongs_to :country
+  belongs_to :currency
 end
